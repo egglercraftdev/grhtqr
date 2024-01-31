@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLS Oynatıcı - Tam Ekran</title>
+
+    <!-- Video.js CSS dosyasını ekleyin -->
+    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+    <style>
+        /* Video etiketini tam ekran yapmak için CSS */
+        .video-js {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+
+    <!-- Video.js ve HLS eklentisini ekleyin -->
+    <script src="https://vjs.zencdn.net/7.17.0/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+</head>
+
+<body>
+
+    <!-- Video etiketi ile Video.js'yi kullanın -->
+    <video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
+        <!-- HLS kaynağını ekleyin -->
+        <source src="https://ddc75c8a6akqr.cloudfront.net/v1/master//TRT-1/master.m3u8" type="application/x-mpegURL">
+        <!-- Fallback içerik -->
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Video.js özelleştirmeleri
+        var player = videojs('my-video', {
+            fluid: true, // Videonun ekran boyutlarına uyum sağlaması için
+            aspectRatio: '16:9' // Video oranı
+        });
+
+        // Tam ekran modu değişikliklerini dinleme
+        player.on('fullscreenchange', function () {
+            if (player.isFullscreen()) {
+                // Tam ekran modunda
+                console.log('Tam ekran modu açık');
+            } else {
+                // Tam ekran modu kapalı
+                console.log('Tam ekran modu kapalı');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

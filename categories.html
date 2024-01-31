@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Kanalları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .categories-container {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-bottom: 20px;
+        }
+
+        .category-card {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s;
+            min-width: 150px;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .channel-card {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 150px;
+        }
+
+        .channel-card:hover {
+            transform: scale(1.05);
+        }
+
+        .channel-image {
+            max-width: 100%;
+            max-height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .channel-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IPTV Kanalları</h1>
+    </header>
+
+    <div class="categories-container">
+        <div class="category-card" onclick="showCategory('spor')">
+            <div class="category-title">Spor</div>
+        </div>
+
+        <div class="category-card" onclick="showCategory('ulusal')">
+            <div class="category-title">Ulusal</div>
+        </div>
+
+        <!-- Diğer kategoriler buraya eklenebilir -->
+    </div>
+
+    <div id="spor-category" class="category-container" style="display: none;">
+        <div class="channel-card">
+            <a href="https://t.trgoals609.xyz/yayininat.m3u8" target="_blank">
+                <img class="channel-image" src="spor-channel1.jpg" alt="Spor Kanalı 1">
+                <div class="channel-name">Bein Sports HD 1</div>
+            </a>
+        </div>
+
+        <div class="channel-card">
+            <a href="spor-kanal2-link" target="_blank">
+                <img class="channel-image" src="spor-channel2.jpg" alt="Spor Kanalı 2">
+                <div class="channel-name">Spor Kanalı 2</div>
+            </a>
+        </div>
+
+        <!-- Diğer spor kanalları buraya eklenebilir -->
+    </div>
+
+    <div id="ulusal-category" class="category-container" style="display: none;">
+        <div class="channel-card">
+            <a href="ulusal-kanal1-link" target="_blank">
+                <img class="channel-image" src="ulusal-channel1.jpg" alt="Ulusal Kanal 1">
+                <div class="channel-name">Ulusal Kanal 1</div>
+            </a>
+        </div>
+
+        <div class="channel-card">
+            <a href="ulusal-kanal2-link" target="_blank">
+                <img class="channel-image" src="ulusal-channel2.jpg" alt="Ulusal Kanal 2">
+                <div class="channel-name">Ulusal Kanal 2</div>
+            </a>
+        </div>
+
+        <!-- Diğer ulusal kanallar buraya eklenebilir -->
+    </div>
+
+    <script>
+        function showCategory(categoryName) {
+            // Tüm kategorileri gizle
+            document.querySelectorAll('.category-container').forEach(function(category) {
+                category.style.display = 'none';
+            });
+
+            // İlgili kategoriyi göster
+            document.getElementById(categoryName + '-category').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

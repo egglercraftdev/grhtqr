@@ -1,0 +1,45 @@
+<!-- spor.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="spor.css">
+    <title>Spor Kanalları</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+    </header>
+
+    <section class="channel" onclick="goToVideo('video_spor_kanal1.html')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/1200px-Logo_bein_sports_1.png" alt="Spor Kanalı 1">
+        <h2>Bein Sports 1 HD</h2>
+        <!-- Kanal 1 içeriği buraya eklenebilir -->
+    </section>
+
+    <section class="channel" onclick="goToVideo('https://player.livepush.io/emvwPvTiB8g9G')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/1200px-Logo_bein_sports_1.png" alt="Spor Kanalı 2">
+        <h2>Bein Sports 1 HD | B</h2>
+        <!-- Kanal 2 içeriği buraya eklenebilir -->
+    </section>
+
+    <section class="channel" onclick="goToVideo('https://player.livepush.io/emv5hmRxZC_qx')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/1200px-Logo_bein_sports_1.png" alt="Spor Kanalı 3">
+        <h2>Bein Sports 2 HD 1080p</h2>
+        <!-- Kanal 3 içeriği buraya eklenebilir -->
+    </section>
+
+    <!-- Daha fazla kanal ekleyebilirsiniz -->
+
+    <footer>
+        <p>&copy; 2023 Canlı TV</p>
+    </footer>
+
+    <script>
+        function goToVideo(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

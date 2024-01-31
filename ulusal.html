@@ -1,0 +1,70 @@
+<!-- spor.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="spor.css">
+  <title>Spor Kanalları</title>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+  </header>
+
+  <section class="channel" onclick="goToVideo('https://player.livepush.io/emvbZdHAUZA_m')">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/TRT_1_logo_%282021-%29.svg/1280px-TRT_1_logo_%282021-%29.svg.png"
+      alt="Spor Kanalı 1">
+    <h2>TRT1 HD</h2>
+    <!-- Kanal 1 içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="channel" onclick="goToVideo('https://player.livepush.io/emvzfuuvhp_2w')">
+    <img src="show-tv.png" alt="Spor Kanalı 2">
+    <h2>Show TV HD</h2>
+    <!-- Kanal 2 içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="channel" onclick="goToVideo('tedts.html')">
+    <img src="https://img.tv8.com.tr/s/template/v2/img/tv8-logo.png" alt="Spor Kanalı 3">
+    <h2>TV8 HD</h2>
+    <!-- Kanal 3 içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="channel" onclick="goToVideo('Kanald.html')">
+    <img src="https://upload.wikimedia.org/wikipedia/tr/thumb/c/ca/Kanal_D_logo.svg/522px-Kanal_D_logo.svg.png"
+      alt="Spor Kanalı 3">
+    <h2>KANAL D HD</h2>
+    <!-- Kanal 3 içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="channel" onclick="goToVideo('startv.html')">
+    <img src="https://www.startv.com.tr/assets/images/content/logo.svg?v=26042021" alt="Spor Kanalı 3">
+    <h2>STAR TV HD</h2>
+    <!-- Kanal 3 içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="channel" onclick="goToVideo('kanal7.html')">
+    <img src="https://canlitv.center/channels/kanal-7.png" alt="Spor Kanalı 3">
+    <h2>KANAL 7 HD</h2>
+    <!-- Kanal 3 içeriği buraya eklenebilir -->
+  </section>
+
+
+  <!-- Daha fazla kanal ekleyebilirsiniz -->
+
+  <footer>
+    <p>&copy; 2023 Canlı TV</p>
+  </footer>
+
+  <script>
+    function goToVideo(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Html5-Hls-Player-2</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://unpkg.com/plyr@3/dist/plyr.css'>
+</head>
+<body>
+  <div class="container">
+    <video id="myVideo" controls crossorigin playsinline poster="https://bitdash-a.akamaihd.net/content/sintel/poster.png"></video>
+  </div>
+
+  <script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
+  <script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL'></script>
+  <script src='https://unpkg.com/plyr@3'></script>
+  <script src="scriptvkanald.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const player = new Plyr('#myVideo');
+
+      // OK tuşuna basıldığında videoyu oynat
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          player.play();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

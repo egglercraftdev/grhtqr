@@ -1,0 +1,106 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="box.css">
+  <title>Canlı TV</title>
+</head>
+
+<body>
+  <header>
+    <img src="https://th.bing.com/th/id/OIG.pu2.Zt6aBLMPDNF3pPqq?pid=ImgGn" alt="Logo">
+  </header>
+
+  <section class="category" data-category="spor" onclick="goToCategory('spor.html')" onmouseover="showOverlay(this)">
+    <img
+      src="https://w7.pngwing.com/pngs/493/376/png-transparent-soccer-player-football-player-logo-sport-soccer-grass-sports-equipment-sports.png"
+      alt="Spor">
+    <h2>Spor</h2>
+    <!-- Spor içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="category" data-category="ulusal" onclick="goToCategory('ulusal.html')" onmouseover="showOverlay(this)">
+    <img
+      src="https://w7.pngwing.com/pngs/181/192/png-transparent-round-turkey-flag-illustration-flag-of-turkey-anatolia-english-national-emblem-of-turkey-turkey-flag-miscellaneous-logo-national-emblem.png"
+      alt="Ulusal">
+    <h2>Ulusal</h2>
+    <!-- Ulusal içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="category" data-category="haber" onclick="goToCategory('haber.html')" onmouseover="showOverlay(this)">
+    <img
+      src="https://w7.pngwing.com/pngs/997/170/png-transparent-red-and-white-earth-illustration-globe-logo-breaking-news-trade-miscellaneous-world-news.png"
+      alt="Haber">
+    <h2>Haber</h2>
+    <!-- Haber içeriği buraya eklenebilir -->
+  </section>
+
+  <section class="category" data-category="film" onclick="goToCategory('film.html')" onmouseover="showOverlay(this)">
+    <img
+      src="https://static.vecteezy.com/system/resources/thumbnails/012/657/549/small/illustration-negative-film-reel-roll-tapes-for-movie-cinema-video-logo-vector.jpg"
+      alt="Film (Yakında)">
+    <h2>Film (Yakında)</h2>
+    <!-- Film içeriği buraya eklenebilir -->
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Canlı TV</p>
+  </footer>
+
+  <script>
+    function goToCategory(url) {
+      window.location.href = url;
+    }
+
+    function showOverlay(category) {
+      var categories = document.querySelectorAll(".category");
+      categories.forEach(function (element) {
+        element.style.backgroundColor = "transparent";
+      });
+
+      category.style.backgroundColor = "rgba(128, 128, 128, 0.5)";
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowUp" || event.key === "ArrowDown" || event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        var activeCategory = document.querySelector(".category[data-category='active']");
+        if (activeCategory) {
+          activeCategory.removeAttribute("data-category");
+        }
+
+        var currentOverlayCategory = document.querySelector(".category[data-category='active']");
+        var nextCategory;
+
+        switch (event.key) {
+          case "ArrowUp":
+            nextCategory = "spor";
+            break;
+          case "ArrowDown":
+            nextCategory = "film";
+            break;
+          case "ArrowLeft":
+            nextCategory = currentOverlayCategory === "spor" ? "film" : "spor";
+            break;
+          case "ArrowRight":
+            nextCategory = currentOverlayCategory === "spor" ? "film" : "spor";
+            break;
+          default:
+            break;
+        }
+
+        var newActiveCategory = document.querySelector(".category[data-category='" + nextCategory + "']");
+        if (newActiveCategory) {
+          newActiveCategory.dataset.category = "active";
+          showOverlay(newActiveCategory);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
