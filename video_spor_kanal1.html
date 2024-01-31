@@ -1,47 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
-
-
-    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-    <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
-  </head>
-
-  <body>
-    <video id="my-video" class="video-js" controls preload="auto" width="2020" height="1142">
-      <source src="http://cors.tundracast.com:2000/https://playhdnew5.buzz/yayinzirve.m3u8" type="application/x-mpegURL">
-      <!-- Diğer video formatları için gerekirse ek source etiketleri ekleyebilirsiniz -->
-    </video>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//jwpsrv.com/library/O4mPlqeTEeK_viIACpYGxA.js"></script>
+</head>
+<body>
+    <div id="my-video"></div>
     <script>
-      var player = videojs('my-video');
+        var playerInstance = jwplayer("my-video");
 
-      player.ready(function() {
-        // Klavye olaylarını dinle
+        playerInstance.setup({
+            file: "http://cors.tundracast.com:2000/https://playhdnew5.buzz/yayinzirve.m3u8",
+            width: '100%',
+            height: '1040',
+            autostart: 'false',
+            image: '',
+            primary: 'html5',
+            hlshtml: 'true'
+        });
+
         document.addEventListener('keydown', function(event) {
-          // Enter tuşu, yani "Enter" tuşu (ASCII kodu: 13)
-          if (event.keyCode === 13) {
-            // Oynatma durumuna göre videoyu başlat veya duraklat
-            if (player.paused()) {
-              player.play();
-            } else {
-              player.pause();
+            // Eğer "okey" düğmesine (örneğin, Enter tuşu) basıldıysa
+            if (event.key === 'Enter') {
+                // Tam ekran modunu etkinleştir
+                playerInstance.setFullscreen(true);
             }
-
-            // Tam ekran moduna geç
-            player.requestFullscreen();
-          }
         });
-
-        // Oynatıcıda bir kullanıcı etkileşimi algılandığında tam ekran talebini yapın
-        player.on('userinactive', function() {
-          player.requestFullscreen();
-        });
-      });
     </script>
-
-
-
 </body>
 </html>
